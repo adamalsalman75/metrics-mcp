@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: metrics-mcp-client
+  ai:
+    mcp:
+      client:
+        sse:
+          connections:
+            sample-server-http:
+              url: http://localhost:8081
+        toolcallback:
+          enabled: true
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o
+
+logging:
+  level:
+    io:
+      modelcontextprotocol:
+        client: WARN
+        spec: WARN
+server:
+  port: 8080
